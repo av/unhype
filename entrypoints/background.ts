@@ -131,6 +131,10 @@ export default defineBackground(() => {
             sendResponse({ status: 'error', content: 'No content returned' });
           }
         })
+        .catch((error) => {
+          console.error('Error during chat completion:', error);
+          sendResponse({ status: 'error', content: error.message });
+        });
       return true;
     } else {
       console.warn('Unknown message type:', message.type);

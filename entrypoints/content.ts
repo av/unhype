@@ -43,8 +43,11 @@ export default defineContentScript({
             type: 'unhype-request',
             content: (hel).innerText
           })
-            .then(({ content }) => {
-              (hel).innerText = content;
+            .then(({ status, content }) => {
+              if (status === 'success') {
+                (hel).innerText = content;
+              }
+
               (hel).style.filter = 'none';
             })
         })

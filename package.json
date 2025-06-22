@@ -1,8 +1,8 @@
 {
-  "name": "wxt-starter",
-  "description": "manifest.json description",
+  "name": "unhype",
+  "description": "Use LLMs to neutralise hype in headers.",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "wxt",
@@ -10,11 +10,15 @@
     "build": "wxt build",
     "build:firefox": "wxt build -b firefox",
     "zip": "wxt zip",
+    "zip:all": "bun zip:chrome && bun zip:firefox && bun zip:edge",
     "zip:firefox": "wxt zip -b firefox",
+    "zip:edge": "wxt zip -b edge",
+    "zip:chrome": "wxt zip -b chrome",
     "compile": "tsc --noEmit",
     "postinstall": "wxt prepare"
   },
   "devDependencies": {
+    "@wxt-dev/auto-icons": "^1.0.2",
     "typescript": "^5.8.3",
     "wxt": "^0.20.6"
   }
