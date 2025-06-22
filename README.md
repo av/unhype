@@ -4,11 +4,15 @@
 ---
 Browser extension to unhype/neutralise the content
 
+# Installation
+
+Download from the latest release on [GitHub](https://github.com/av/unhype/releases)
+
 # Development
 
-```
-git clone https://github.com/av/unhype.git
-cd ./unhype
+```bash
+git clone https://github.com/av/unhype.git && cd unhype
+
 bun install
 bun run dev
 ```
