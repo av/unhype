@@ -5,6 +5,10 @@ https://github.com/user-attachments/assets/93efd7a8-a660-47f5-bfbd-3d3e7755e2eb
 
 ---
 
+![example](./docs/example.png)
+
+---
+
 Browser extension to unhype/neutralise headers on the web.
 
 # Installation
