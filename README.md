@@ -2,7 +2,8 @@
 ![unhype](./docs/unhype.png)
 
 ---
-Browser extension to unhype/neutralise the content
+
+Browser extension to unhype/neutralise headers on the web.
 
 # Installation
 
