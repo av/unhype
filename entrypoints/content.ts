@@ -32,15 +32,33 @@ export default defineContentScript({
         '[data-testid="card-part-title"]',
         '.title',
         '.article-title',
+        '.desc_container',
       ].map((s) => `${s}:not([unhyped="true"])`).join(', ')
       const headers = document.querySelectorAll(targets);
 
       await Promise.all(
         Array.from(headers).map((header) => {
           const hel = header as HTMLElement;
+          const content = (hel).innerText.trim();
 
-          (hel).style.filter = 'blur(4px)';
-          (hel).setAttribute('unhyped', 'true');
+          const init = () => {
+            (hel).style.filter = 'blur(2px)';
+          }
+
+          const finalise = () => {
+            (hel).style.filter = 'none';
+            (hel).setAttribute('unhyped', 'true');
+          }
+
+          if (content.length < 10) {
+            return finalise();
+          }
+
+          if (content.split(' ').length < 3) {
+            return finalise();
+          }
+
+          init();
 
           return browser.runtime.sendMessage({
             type: 'unhype-request',
@@ -50,9 +68,8 @@ export default defineContentScript({
               if (status === 'success') {
                 (hel).innerText = content;
               }
-
-              (hel).style.filter = 'none';
             })
+            .finally(finalise);
         })
       )
     }

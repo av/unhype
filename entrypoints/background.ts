@@ -6,13 +6,13 @@ async function chatCompletion(payload) {
     apiKey,
     model,
   ] = await Promise.all([
-    storage.getItem<string>('local:llm.apiUrl', {
+    storage.getItem<string>(STORAGE_KEYS.LLM_API_URL, {
       fallback: 'http://localhost:11434/v1',
     }),
-    storage.getItem<string>('local:llm.apiKey', {
+    storage.getItem<string>(STORAGE_KEYS.LLM_API_KEY, {
       fallback: 'sk-ollama',
     }),
-    storage.getItem<string>('local:llm.model', {
+    storage.getItem<string>(STORAGE_KEYS.LLM_MODEL, {
       fallback: 'llama3.2:3b-instruct-q8_0',
     }),
   ]);
@@ -46,6 +46,9 @@ Rewrite given header to remove:
 - Clickbait
 
 Make it informative, concise, straightforward.
+Remove any bias or sensationalism.
+Ensure it is neutral and factual.
+It should be short and to the point.
 Preserve original header language.
 
 # Examples:

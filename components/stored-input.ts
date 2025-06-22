@@ -1,10 +1,20 @@
 import { storage } from '#imports';
 
-export function storedInput(
+export function storedInput({
+  element,
+  defaultValue = '',
+  storageKey,
+  maskable = false
+}: {
   element: HTMLInputElement,
-  defaultValue: string = ''
-) {
-  const storageKey = `local:${element.dataset.key}` as const
+  defaultValue: string,
+  storageKey: StorageItemKey,
+  maskable?: boolean
+}) {
+  if (storageKey === undefined) {
+    throw new Error('storageKey is required');
+  }
+
   const value = storage.defineItem<string>(storageKey);
 
   (async () => {

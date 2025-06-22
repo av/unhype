@@ -32,6 +32,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -57,11 +58,24 @@ h1 {
   gap: 1rem;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
   display: block;
   padding: 0.5rem;
   border: none;
   border-radius: 4px;
   background-color: #333;
   color: #fff;
+}
+
+#status {
+  cursor: pointer;
+}
+
+#status.READY {
+  color: #4caf50;
+}
+
+#status.ERROR {
+  color: #f44336;
 }
