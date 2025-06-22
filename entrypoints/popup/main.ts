@@ -8,24 +8,23 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 
     <section>
       <label for="apiUrl">API URL</label>
-      <input type="text" id="apiUrl" value="http://localhost:11434/v1" data-key="llm.apiUrl" />
+      <input type="text" id="apiUrl" data-key="llm.apiUrl" />
     </section>
 
     <section>
       <label for="apiKey">API Key</label>
-      <input type="text" id="apiKey" value="-" data-key="llm.apiKey" />
+      <input type="text" id="apiKey" data-key="llm.apiKey" />
     </section>
 
     <section>
       <label for="model">Model ID</label>
-      <input type="text" id="model" value="-" data-key="llm.model" />
+      <input type="text" id="model" data-key="llm.model" />
     </section>
 
     <a href="https://github.com/av/unhype" target="_blank">GitHub</a>
   </div>
 `;
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!);
-storedInput(document.querySelector<HTMLInputElement>('#apiUrl')!);
-storedInput(document.querySelector<HTMLInputElement>('#apiKey')!);
-storedInput(document.querySelector<HTMLInputElement>('#model')!);
+storedInput(document.querySelector<HTMLInputElement>('#apiUrl')!, 'http://localhost:11434/v1');
+storedInput(document.querySelector<HTMLInputElement>('#apiKey')!, 'sk-ollama');
+storedInput(document.querySelector<HTMLInputElement>('#model')!, 'llama3.2:3b-instruct-q8_0');

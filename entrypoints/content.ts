@@ -29,6 +29,9 @@ export default defineContentScript({
         '.header',
         '.lead-headline > a',
         '.ui-story-headline',
+        '[data-testid="card-part-title"]',
+        '.title',
+        '.article-title',
       ].map((s) => `${s}:not([unhyped="true"])`).join(', ')
       const headers = document.querySelectorAll(targets);
 
