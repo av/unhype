@@ -41,7 +41,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 380px;
 }
 
 h1 {
@@ -52,20 +52,45 @@ h1 {
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 3rem;
+  padding: 2rem;
   gap: 1rem;
+}
+
+.container > section {
+  display: flex;
+  flex-direction: column;
 }
 
 input[type="text"],
 input[type="password"] {
+  flex: 1 0 auto;
   display: block;
   padding: 0.5rem;
   border: none;
   border-radius: 4px;
   background-color: #333;
   color: #fff;
+}
+
+button {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #333;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+button:active {
+  background-color: #666;
 }
 
 #status {
@@ -78,4 +103,41 @@ input[type="password"] {
 
 #status.ERROR {
   color: #f44336;
+}
+
+#selectors {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#selectors > .ping-control {
+  align-self: flex-start;
+}
+
+#selectors > .selector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+#selectors .remove-control,
+#selectors .ping-control {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  line-height: 1rem;
+  font-size: 1rem;
+  padding: 0rem;
+}
+
+#selectors .ping-control {
+  font-size: 1.6rem;
+  color: #ccc;
+}
+
+#selectors > .selector > input {
+  padding-right: 2rem;
 }

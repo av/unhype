@@ -1,4 +1,5 @@
-import { browser } from '#imports';
+import { browser, storage } from '#imports';
+import { DEFAULT_SELECTORS } from '@/utils/constants';
 
 export default defineContentScript({
   matches: ['<all_urls>'],
@@ -18,23 +19,10 @@ export default defineContentScript({
     // Function to highlight all headers
     async function highlightHeaders() {
       // Select all header elements (h1-h6)
-      const targets = [
-        'h1',
-        'h2',
-        'h3',
-        'h4',
-        'h5',
-        'h6',
-        '[role="heading"]',
-        '.header',
-        '.lead-headline > a',
-        '.ui-story-headline',
-        '[data-testid="card-part-title"]',
-        '.title',
-        '.article-title',
-        '.desc_container',
-        '[slot="title"]',
-      ].map((s) => `${s}:not([unhyped="true"])`).join(', ')
+      const storedTargets = await storage.getItem<string[]>(STORAGE_KEYS.SELECTORS, {
+        fallback: DEFAULT_SELECTORS,
+      });
+      const targets = storedTargets.map((s) => `${s}:not([unhyped="true"])`).join(', ')
       const headers = document.querySelectorAll(targets);
 
       await Promise.all(

@@ -6,6 +6,7 @@ https://github.com/user-attachments/assets/93efd7a8-a660-47f5-bfbd-3d3e7755e2eb
 ---
 
 ![example](./docs/example.png)
+![screenshot](./docs/screenshot.png)
 
 ---
 
@@ -18,8 +19,8 @@ Browser extension to unhype/neutralise headers on the web.
 | Browser | Link |
 |---------|------|
 | Google Chrome | [Chrome Web Store](https://chromewebstore.google.com/detail/unhype/nmnhedloogpjnfbmkipcolejljminncl?authuser=0&hl=en) |
-| Microsoft Edge | Pending review |
 | Mozilla Firefox | Pending review |
+| Microsoft Edge | [Install manually](#microsoft-edge), will submit after they fix login with GitHub |
 
 ## Manual
 
