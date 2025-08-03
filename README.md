@@ -1,8 +1,5 @@
 ![splash](./docs/splash.png)
 
-https://github.com/user-attachments/assets/93efd7a8-a660-47f5-bfbd-3d3e7755e2eb
-
-
 ---
 
 ![example](./docs/example.png)
@@ -50,6 +47,71 @@ Download a zip archive with the extension for your browser from the [releases pa
 
 Download from the latest release on [GitHpub](https://github.com/av/unhype/releases)
 
+# Configuration
+
+## Troubleshooting
+
+![indicator](./docs/indicator.png)
+
+When configuring the extension, look at the "LLM" indicator, it'll show if the current configuration is valid and if the extension is connected to the LLM. Hover over the indicator to see the reason for the current state.
+
+## Choosing an LLM
+
+Unhype works well with any LLM at or above the Llama 3.2 3B level of performance.
+
+>[!WARNING]
+> When using LLMs over paid APIs, it's recommended to choose from cheaper models as the extension could make many requests from specific pages with a lot of headers.
+
+## Configuring unhyped content
+
+You can point the extension to any content on the page, by modifying the list of selectors it operates on.
+
+![selectors](./docs/selectors.png)
+
+Default list is configured to work relatively well in most cases, including populr sites like Reddit, Hacker News, Google, and others.
+
+> [!NOTE]
+> Extension can be configured to replace entire page content which might lead to unexpected results or excessive LLM usage. Hit "reset" to restore default selectors.
+
+## With Ollama
+
+[Set OLLAMA_ORIGINS](https://github.com/ollama/ollama/blob/main/docs/faq.md#how-do-i-configure-ollama-server) to allow `chrome-extension://*`, `moz-extension://*`
+
+**API URL**<br/>
+https://localhost:11434/v1
+
+**API Key**<br/>
+Use your Ollama API key, if you have one, otherwise use any random string.
+
+**Model ID**<br/>
+Run `ollama ls` to see available models. Follow official guide on downloading new ones.
+
+## With OpenRouter
+
+**API URL**<br/>
+https://openrouter.ai/api/v1
+
+**API Key**<br/>
+Use existing API key or generate a new one at the [https://openrouter.ai/settings/keys](https://openrouter.ai/settings/keys)
+
+**Model ID**<br/>
+Choose from [OpenRouter Models](https://openrouter.ai/models) page
+
+## With Mistral AI
+
+**API URL**<br/>
+https://api.mistral.ai/v1
+
+**API Key**<br/>
+Use existing Mistral API key or follow the [Quickstart guide on La Plateforme](https://docs.mistral.ai/getting-started/quickstart/)
+
+**Model ID**<br/>
+See [Models Overview](https://docs.mistral.ai/getting-started/models/models_overview/) or run `GET /v1/models` to see available models.
+
+## With arbitrary OpenAI-compatible API
+
+Set **API URL**, **API Key** to your OpenAI-compatible API endpoint and key, use one of the models from `GET /v1/models` as **Model ID**.
+
 # Development
 
 ```bash
@@ -58,3 +120,4 @@ git clone https://github.com/av/unhype.git && cd unhype
 bun install
 bun run dev
 ```
+
