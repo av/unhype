@@ -48,7 +48,7 @@ Download a zip archive with the extension for your browser from the [releases pa
 - Navigate to the folder where you extracted the extension files and select either the manifest.json file or the ZIP file itself.
 - Note: For Firefox, temporary add-ons are removed when you close the browser. For a more permanent installation of a self-developed extension, it typically needs to be signed by Mozilla.
 
-Download from the latest release on [GitHub](https://github.com/av/unhype/releases)
+Download from the latest release on [GitHpub](https://github.com/av/unhype/releases)
 
 # Development
 

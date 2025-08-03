@@ -15,7 +15,8 @@
     "zip:edge": "wxt zip -b edge",
     "zip:chrome": "wxt zip -b chrome",
     "compile": "tsc --noEmit",
-    "postinstall": "wxt prepare"
+    "postinstall": "wxt prepare",
+    "submit": "zip:all && cd .output && wxt submit"
   },
   "devDependencies": {
     "@wxt-dev/auto-icons": "^1.0.2",
