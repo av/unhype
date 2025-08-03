@@ -16,7 +16,7 @@ Browser extension to unhype/neutralise headers on the web.
 | Browser | Link |
 |---------|------|
 | Google Chrome | [Chrome Web Store](https://chromewebstore.google.com/detail/unhype/nmnhedloogpjnfbmkipcolejljminncl?authuser=0&hl=en) |
-| Mozilla Firefox | Pending review |
+| Mozilla Firefox | [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/unhype) |
 | Microsoft Edge | [Install manually](#microsoft-edge), will submit after they fix login with GitHub |
 
 ## Manual
