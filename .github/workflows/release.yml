@@ -82,7 +82,7 @@ jobs:
 
       - name: Submit to stores
         run: |
-          pnpm wxt submit \
+          bun wxt submit \
             --chrome-zip .output/*-chrome.zip \
             --firefox-zip .output/*-firefox.zip --firefox-sources-zip .output/*-sources.zip
         env:
